@@ -1,16 +1,16 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import "./App.css";
 import Login from "./components/Login/Login";
 import { getTokenFromResponse } from "./components/spotify";
 import SpotifyWebApi from "spotify-web-api-js";
 import Player from "./components/Player/Player";
 import { setToken, setUser, setPlaylists } from "./store/actions";
+import { AppState } from "./store/rootReducer";
 
 const s = new SpotifyWebApi();
 
 const App = () => {
-  const token = useSelector((state) => state.spotify.token);
+  const token = useSelector((state: AppState) => state.spotify.token);
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -33,9 +33,7 @@ const App = () => {
     }
   }, [dispatch]);
 
-  return (
-    <div className="App">{token ? <Player spotify={s} /> : <Login />}</div>
-  );
+  return <div className="App">{token ? <Player /> : <Login />}</div>;
 };
 
 export default App;

@@ -87,21 +87,7 @@ const spotifyReducer = (
 
 export default spotifyReducer;
 
-export type User = {
-  display_name: string;
-  external_urls: {
-    spotify: string;
-  };
-  followers: {
-    href: string | null;
-    total: number;
-  };
-  href: string;
-  id: string;
-  images: Images[];
-  type: string;
-  uri: string;
-};
+export interface User extends SpotifyApi.CurrentUsersProfileResponse {}
 
 export type PlaylistsItem = {
   href: string;
@@ -120,12 +106,8 @@ export type PlaylistsNewReleasesType = {
   albums: PlaylistsType;
 };
 
-export type PlaylistsType = {
-  href: string;
-  items: PlaylistsItem[];
-  limit: number;
-  total: number;
-};
+export interface PlaylistsType
+  extends SpotifyApi.ListOfUsersPlaylistsResponse {}
 
 export type PlaylistsTrackType = {
   href: string;

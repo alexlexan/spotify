@@ -15,7 +15,7 @@ export const getTokenFromResponse = () => {
   return window.location.hash
     .substring(1)
     .split("&")
-    .reduce((initial, item) => {
+    .reduce((initial: IndexableObject, item) => {
       var parts = item.split("=");
       initial[parts[0]] = decodeURIComponent(parts[1]);
 
@@ -28,3 +28,7 @@ export const accessUrl = `${authEndpoint}?client_id=${clientId}&redirect_uri=${r
 )}&response_type=token&show_dialog=true`;
 
 export const playlistUrl = `https://api.spotify.com/v1`;
+
+type IndexableObject = {
+  [key: string]: string;
+};

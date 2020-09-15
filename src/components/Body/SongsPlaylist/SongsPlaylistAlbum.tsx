@@ -47,7 +47,7 @@ const SongsPlaylistAlbum: React.FC = () => {
   }, [songs, playlist, dispatch]);
 
   if (status === "error") {
-    return <Error error={error} />;
+    return <Error error={error as Error} />;
   }
 
   return (

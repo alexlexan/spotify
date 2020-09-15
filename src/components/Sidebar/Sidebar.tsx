@@ -6,7 +6,7 @@ import SearchIcon from "@material-ui/icons/Search";
 import LibraryMusicIcon from "@material-ui/icons/LibraryMusic";
 import { NavLink } from "react-router-dom";
 
-function Sidebar() {
+const Sidebar: React.FC = () => {
   return (
     <div className="sidebar">
       <img
@@ -27,6 +27,6 @@ function Sidebar() {
       </NavLink>
     </div>
   );
-}
+};
 
 export default Sidebar;

@@ -5,7 +5,7 @@ import { playAndSetTrack, setSongs } from "../../../store/actions";
 import { PlaylistsTrackType, Track } from "../../../store/reducer";
 
 type Props = {
-  playlists: PlaylistsTrackType;
+  playlists: PlaylistsTrackType | null;
   title: string;
 };
 

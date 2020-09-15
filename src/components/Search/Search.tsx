@@ -13,24 +13,34 @@ import Error from "../Error";
 import useDebounce from "../../useHooks/useDebounce";
 import { search } from "../../useHooks/useSearch";
 import PlaylistsTrack from "../Body/Playlists/PlaylistsTrack";
+import { AppState } from "../../store/rootReducer";
+import { PlaylistsType } from "../../store/reducer";
+import { Status } from "../../useHooks/useAsync";
 
-function Search() {
+const Search: React.FC = () => {
   const history = useHistory();
-  const user = useSelector((state) => state.spotify.user);
-  const token = useSelector((state) => state.spotify.token);
+  const user = useSelector((state: AppState) => state.spotify.user);
+  const token = useSelector((state: AppState) => state.spotify.token);
 
   const [searchTerm, setSearchTerm] = useState("");
   const debouncedSearchTerm = useDebounce(searchTerm, 1000);
-  const [featuredPlaylists, setFeaturedPlaylists] = useState(null);
+  const [
+    featuredPlaylists,
+    setFeaturedPlaylists,
+  ] = useState<PlaylistsType | null>(null);
 
   const [resultsSearch, setResultsSearch] = useState(null);
   const [isSearching, setIsSearching] = useState(false);
 
-  const { status, value: categories, error } = useAsync(getCategories, token);
+  const { status, value: categories, error } = useAsync<
+    featuredPlaylists,
+    Error,
+    getCategoriesSearch
+  >(getCategories, token);
 
   const urlSearch = `https://api.spotify.com/v1/search?q=${debouncedSearchTerm}&limit=10&type=album,track,artist`;
 
-  const Back = (history) => {
+  const Back = () => {
     if (history.location.key) {
       history.goBack();
     }
@@ -52,11 +62,13 @@ function Search() {
     } else {
       setResultsSearch(null);
     }
-    return () => (isMounted = false);
+    return () => {
+      isMounted = false;
+    };
   }, [categories, debouncedSearchTerm, history, token, urlSearch]);
 
   if (status === "error") {
-    return <Error error={error} />;
+    return <Error error={error as Error} />;
   }
 
   return (
@@ -65,8 +77,7 @@ function Search() {
         <div className="header__left">
           <ArrowBackIosIcon
             className="header__arrowLeft"
-            size="large"
-            onClick={() => Back(history)}
+            onClick={() => Back()}
           />
           <ArrowForwardIosIcon
             className="header__arrowRight"
@@ -82,10 +93,15 @@ function Search() {
             />
           </div>
         </div>
-        <div className="header__right">
-          <Avatar alt={user?.display_name} src={user?.images[0]?.url} />
-          <h4>{user?.display_name}</h4>
-        </div>
+        {user && (
+          <div className="header__right">
+            <Avatar
+              alt={user.display_name}
+              src={(user.images as SpotifyApi.ImageObject[])[0]?.url}
+            />
+            <h4>{user.display_name}</h4>
+          </div>
+        )}
       </div>
 
       <SearchPlaylist
@@ -96,11 +112,18 @@ function Search() {
       />
     </>
   );
-}
+};
 
 export default Search;
 
-const SearchPlaylist = ({
+type PropsSearchPlaylist = {
+  resultsSearch: any;
+  featuredPlaylists: PlaylistsType | null;
+  status: Status;
+  isSearching: boolean;
+};
+
+const SearchPlaylist: React.FC<PropsSearchPlaylist> = ({
   resultsSearch,
   featuredPlaylists,
   status,
@@ -126,8 +149,16 @@ const SearchPlaylist = ({
   return <Loader />;
 };
 
-const getCategories = async (token, urlCategories) => {
-  const getData = async (url, token) => {
+type featuredPlaylists = {
+  playlists: PlaylistsType;
+};
+
+type getCategoriesSearch = typeof getCategories;
+
+async function getCategories<featuredPlaylists>(
+  token: string
+): Promise<featuredPlaylists> {
+  const getData = async (url: string, token: string) => {
     const request = new Request(url, {
       headers: {
         Authorization: "Bearer " + token,
@@ -145,4 +176,4 @@ const getCategories = async (token, urlCategories) => {
     token
   );
   return categories;
-};
+}

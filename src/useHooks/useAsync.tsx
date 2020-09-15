@@ -1,7 +1,7 @@
 import { useState, useEffect, useCallback, useRef } from "react";
 
 type PromiseFn<T> = (...args: any) => Promise<T>;
-type Status = "idle" | "pending" | "success" | "error";
+export type Status = "idle" | "pending" | "success" | "error";
 
 function useAsync<D, E, F extends PromiseFn<D>>(
   asyncFunction: F,

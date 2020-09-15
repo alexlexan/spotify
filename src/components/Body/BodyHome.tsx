@@ -23,7 +23,7 @@ const BodyHome = () => {
   >(getHomePlaylists, token);
 
   if (status === "error") {
-    return <Error error={error} />;
+    return <Error error={error as Error} />;
   }
 
   return (

@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import { PlaylistsType } from "../../../store/reducer";
 
 type Props = {
-  playlists: PlaylistsType;
+  playlists: PlaylistsType | null;
   title: string;
 };
 
