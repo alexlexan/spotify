@@ -1,0 +1,19 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`shows out of cheese error message 1`] = `
+<Login>
+  <div
+    className="login"
+  >
+    <img
+      alt=""
+      src="https://getheavy.com/wp-content/uploads/2019/12/spotify2019-830x350.jpg"
+    />
+    <a
+      href="https://accounts.spotify.com/authorize?client_id=cff76213089a4e228206c8bf120d67cb&redirect_uri=http://localhost:3000/&scope=user-read-currently-playing%20user-read-recently-played%20user-read-playback-state%20user-top-read%20user-modify-playback-state&response_type=token&show_dialog=true"
+    >
+      LOGIN TO SPOTIFY
+    </a>
+  </div>
+</Login>
+`;

@@ -1,0 +1,24 @@
+.playlist
+    padding-bottom: 20px
+    h1
+        padding-bottom: 20px
+    p 
+        font-weight: bold
+        padding-top: 10px
+        font-size: 18px
+
+    &__item:hover
+        cursor: pointer
+        .playlist__active
+            opacity: 1  
+            transition: 500ms opacity ease
+
+    &__active
+        opacity: 0
+        transition: 500ms opacity ease
+        position: absolute 
+        right: 15px
+        bottom: 14px     
+    &__active:hover
+        color: #1db954
+
