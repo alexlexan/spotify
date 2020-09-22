@@ -12,7 +12,7 @@ import { ThunkDispatch } from "redux-thunk";
 
 type VolumeSliderProps = {
   activeTrack: Track | null;
-  playing: string;
+  playing: "PLAYING" | "STOPPED" | "PAUSED";
 };
 
 const VolumeSlider: React.FC<VolumeSliderProps> = ({
