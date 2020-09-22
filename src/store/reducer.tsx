@@ -163,7 +163,7 @@ export type ActivePlaylist = {
 export type State = {
   user: User | null;
   myPlaylists: PlaylistsType | null;
-  playing: string;
+  playing: "PLAYING" | "STOPPED" | "PAUSED";
   activeTrack: Track | null;
   volume: number;
   songs: Track[] | null;
