@@ -1,18 +1,15 @@
-import React, { ChangeEvent, useRef } from "react";
+import React from "react";
 import "./Footer.sass";
 import PlayCircleOutlineIcon from "@material-ui/icons/PlayCircleOutline";
 import SkipPreviousIcon from "@material-ui/icons/SkipPrevious";
 import SkipNextIcon from "@material-ui/icons/SkipNext";
-import VolumeDownIcon from "@material-ui/icons/VolumeDown";
 import PauseCircleOutlineIcon from "@material-ui/icons/PauseCircleOutline";
-import { Grid, Slider } from "@material-ui/core";
 import { useDispatch, useSelector } from "react-redux";
 import Sound from "react-sound";
-import { play, pause, playAndSetTrack, stop } from "../../store/actions";
+import { play, pause, playAndSetTrack } from "../../store/actions";
 import { AppState } from "../../store/rootReducer";
-import { State, Track } from "../../store/reducer";
-import { Actions } from "../../store/actions";
-import { ThunkDispatch } from "redux-thunk";
+import { Track } from "../../store/reducer";
+import VolumeSlider from "./VolumeSlider";
 
 const Footer: React.FC = () => {
   const playing = useSelector((state: AppState) => state.spotify.playing);
@@ -74,7 +71,7 @@ const Footer: React.FC = () => {
           className="footer__icon"
           onClick={() => prevTrack(songs)}
         />
-        {playing === Sound.status.PLAYING ? (
+        {playing === (Sound as any).status.PLAYING ? (
           <PauseCircleOutlineIcon
             onClick={pauseTrack}
             fontSize="large"
@@ -93,69 +90,10 @@ const Footer: React.FC = () => {
         />
       </div>
       <div className="footer__right">
-        <VolumeSlider
-          activeTrack={activeTrack}
-          dispatch={dispatch}
-          playing={playing}
-        />
+        <VolumeSlider activeTrack={activeTrack} playing={playing} />
       </div>
     </div>
   );
 };
 
 export default Footer;
-
-type VolumeSliderProps = {
-  activeTrack: Track | null;
-  dispatch: ThunkDispatch<State, unknown, Actions>;
-  playing: string;
-};
-
-const VolumeSlider: React.FC<VolumeSliderProps> = ({
-  activeTrack,
-  dispatch,
-  playing,
-}) => {
-  const volume = useSelector((state: AppState) => state.spotify.volume);
-  const oldVolume = useRef(volume);
-
-  const finish = () => {
-    dispatch(stop());
-  };
-
-  const handleSliderChange = (
-    _: ChangeEvent<{}>,
-    newValue: number | number[]
-  ) => {
-    dispatch({ type: "VOLUME", volume: newValue as number });
-    oldVolume.current = newValue as number;
-  };
-
-  const muteVolume = (volume: number, oldVolume: number | number[]) => {
-    const newVolume = volume === 0 ? oldVolume : 0;
-    dispatch({ type: "VOLUME", volume: newVolume as number });
-  };
-
-  return (
-    <Grid container spacing={2}>
-      <Grid item>
-        <VolumeDownIcon onClick={() => muteVolume(volume, oldVolume.current)} />
-      </Grid>
-      <Grid item xs>
-        {activeTrack && (
-          <Sound
-            url={activeTrack.preview_url || activeTrack.external_urls.spotify}
-            playStatus={playing}
-            volume={volume}
-            onFinishedPlaying={finish}
-          />
-        )}
-        <Slider
-          aria-labelledby="continuous-slider"
-          value={volume}
-          onChange={handleSliderChange}
-        />
-      </Grid>
-    </Grid>
-  );
-};

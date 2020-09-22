@@ -46,7 +46,7 @@ const BodyHome = () => {
 
 export default BodyHome;
 
-async function getHomePlaylists<
+export async function getHomePlaylists<
   PlaylistsType,
   PlaylistsTrackType,
   PlaylistsNewReleasesType

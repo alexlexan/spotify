@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AAAA,AAAA,OAAO,AAAC,CACN,OAAO,CAAE,IAAI,CACb,eAAe,CAAE,MAAM,CACvB,WAAW,CAAE,MAAM,CACnB,MAAM,CAAE,KAAK,CAAG",
+    "sources": [
+        "../../src/components/Loader.sass"
+    ],
+    "names": [],
+    "file": "Loader.min.css"
+}

@@ -1,0 +1,68 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`test VolumeSlier component should render component with props 1`] = `
+<WithStyles(ForwardRef(Grid))
+  container={true}
+  spacing={2}
+>
+  <WithStyles(ForwardRef(Grid))
+    item={true}
+  >
+    <VolumeDownIcon
+      onClick={[Function]}
+    />
+  </WithStyles(ForwardRef(Grid))>
+  <WithStyles(ForwardRef(Grid))
+    item={true}
+    xs={true}
+  >
+    <Sound
+      autoLoad={false}
+      loop={false}
+      onBufferChange={[Function]}
+      onError={[Function]}
+      onFinishedPlaying={[Function]}
+      onLoad={[Function]}
+      onLoading={[Function]}
+      onPause={[Function]}
+      onPlaying={[Function]}
+      onResume={[Function]}
+      onStop={[Function]}
+      playStatus="PLAYING"
+      playbackRate={1}
+      url="activeTrackUrl"
+      volume={50}
+    />
+    <WithStyles(ForwardRef(Slider))
+      aria-labelledby="continuous-slider"
+      onChange={[Function]}
+      value={50}
+    />
+  </WithStyles(ForwardRef(Grid))>
+</WithStyles(ForwardRef(Grid))>
+`;
+
+exports[`test VolumeSlier component should render component without props 1`] = `
+<WithStyles(ForwardRef(Grid))
+  container={true}
+  spacing={2}
+>
+  <WithStyles(ForwardRef(Grid))
+    item={true}
+  >
+    <VolumeDownIcon
+      onClick={[Function]}
+    />
+  </WithStyles(ForwardRef(Grid))>
+  <WithStyles(ForwardRef(Grid))
+    item={true}
+    xs={true}
+  >
+    <WithStyles(ForwardRef(Slider))
+      aria-labelledby="continuous-slider"
+      onChange={[Function]}
+      value={50}
+    />
+  </WithStyles(ForwardRef(Grid))>
+</WithStyles(ForwardRef(Grid))>
+`;

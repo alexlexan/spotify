@@ -1,0 +1,14 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`render SidebarOptionOption component 1`] = `
+<div
+  className="sidebarOption"
+>
+  <HomeIcon
+    className="sidebarOption__icon"
+  />
+  <h4>
+    test
+  </h4>
+</div>
+`;

@@ -1,19 +1,17 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import Login from "./components/Login/Login";
 import { getTokenFromResponse } from "./components/spotify";
-import SpotifyWebApi from "spotify-web-api-js";
+import s from "./spotifyApp";
 import Player from "./components/Player/Player";
 import { setToken, setUser, setPlaylists } from "./store/actions";
 import { AppState } from "./store/rootReducer";
-
-const s = new SpotifyWebApi();
 
 const App = () => {
   const token = useSelector((state: AppState) => state.spotify.token);
   const dispatch = useDispatch();
 
-  useEffect(() => {
+  React.useEffect(() => {
     const hash = getTokenFromResponse();
     window.location.hash = "";
     const _token = hash.access_token;

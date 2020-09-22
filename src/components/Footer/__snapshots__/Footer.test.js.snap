@@ -1,0 +1,255 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`test Footer component render Footer component with activeTrack, with playing snapshot Footer component 1`] = `
+<div
+  className="footer"
+>
+  <div
+    className="footer__left"
+  >
+    <img
+      alt="secondTrack"
+      className="footer__albumLogo"
+      src="urlPlaylist"
+    />
+    <div
+      className="footer__songInfo"
+    >
+      <h4>
+        secondTrack
+      </h4>
+      <p>
+        Artist
+      </p>
+    </div>
+  </div>
+  <div
+    className="footer__center"
+  >
+    <SkipPreviousIcon
+      className="footer__icon"
+      onClick={[Function]}
+    />
+    <PauseCircleOutlineIcon
+      className="footer__icon"
+      fontSize="large"
+      onClick={[Function]}
+    />
+    <SkipNextIcon
+      className="footer__icon"
+      onClick={[Function]}
+    />
+  </div>
+  <div
+    className="footer__right"
+  >
+    <VolumeSlider
+      activeTrack={
+        Object {
+          "artists": Array [
+            Object {
+              "name": "Artist",
+            },
+          ],
+          "id": 2,
+          "images": Array [
+            Object {
+              "url": "secondTrackUrl",
+            },
+          ],
+          "name": "secondTrack",
+          "type": "Track",
+        }
+      }
+      playing="PLAYING"
+    />
+  </div>
+</div>
+`;
+
+exports[`test Footer component render Footer component with activeTrack, without playing snapshot Footer component with activeTrack, without playing 1`] = `
+<div
+  className="footer"
+>
+  <div
+    className="footer__left"
+  >
+    <img
+      alt="firstTrack"
+      className="footer__albumLogo"
+      src="urlPlaylist"
+    />
+    <div
+      className="footer__songInfo"
+    >
+      <h4>
+        firstTrack
+      </h4>
+      <p>
+        Artist
+      </p>
+    </div>
+  </div>
+  <div
+    className="footer__center"
+  >
+    <SkipPreviousIcon
+      className="footer__icon"
+      onClick={[Function]}
+    />
+    <PlayCircleOutlineIcon
+      className="footer__icon"
+      fontSize="large"
+      onClick={[Function]}
+    />
+    <SkipNextIcon
+      className="footer__icon"
+      onClick={[Function]}
+    />
+  </div>
+  <div
+    className="footer__right"
+  >
+    <VolumeSlider
+      activeTrack={
+        Object {
+          "artists": Array [
+            Object {
+              "name": "Artist",
+            },
+          ],
+          "id": 1,
+          "images": Array [
+            Object {
+              "url": "firstTrackUrl",
+            },
+          ],
+          "name": "firstTrack",
+          "type": "Track",
+        }
+      }
+      playing="STOPPED"
+    />
+  </div>
+</div>
+`;
+
+exports[`test Footer component render Footer component without activeTrack, without playing snapshot Footer component without activeTrack, without playing 1`] = `
+<div
+  className="footer"
+>
+  <div
+    className="footer__left"
+  >
+    <div
+      className="footer__songInfo"
+    >
+      <h4>
+        No song is playing
+      </h4>
+      <p>
+        ...
+      </p>
+    </div>
+  </div>
+  <div
+    className="footer__center"
+  >
+    <SkipPreviousIcon
+      className="footer__icon"
+      onClick={[Function]}
+    />
+    <PlayCircleOutlineIcon
+      className="footer__icon"
+      fontSize="large"
+      onClick={[Function]}
+    />
+    <SkipNextIcon
+      className="footer__icon"
+      onClick={[Function]}
+    />
+  </div>
+  <div
+    className="footer__right"
+  >
+    <VolumeSlider
+      activeTrack={null}
+      playing="STOPPED"
+    />
+  </div>
+</div>
+`;
+
+exports[`test Footer component test snapshot Footer component with activeTrack with activeTrack.album, without playing 1`] = `
+<div
+  className="footer"
+>
+  <div
+    className="footer__left"
+  >
+    <img
+      alt="thirdTrack"
+      className="footer__albumLogo"
+      src="urlalbumPlaylist"
+    />
+    <div
+      className="footer__songInfo"
+    >
+      <h4>
+        thirdTrack
+      </h4>
+      <p>
+        Artist
+      </p>
+    </div>
+  </div>
+  <div
+    className="footer__center"
+  >
+    <SkipPreviousIcon
+      className="footer__icon"
+      onClick={[Function]}
+    />
+    <PlayCircleOutlineIcon
+      className="footer__icon"
+      fontSize="large"
+      onClick={[Function]}
+    />
+    <SkipNextIcon
+      className="footer__icon"
+      onClick={[Function]}
+    />
+  </div>
+  <div
+    className="footer__right"
+  >
+    <VolumeSlider
+      activeTrack={
+        Object {
+          "album": Object {
+            "images": Array [
+              Object {
+                "url": "urlalbumPlaylist",
+              },
+            ],
+          },
+          "artists": Array [
+            Object {
+              "name": "Artist",
+            },
+          ],
+          "id": 3,
+          "images": Array [
+            Object {
+              "url": "thirdTrack",
+            },
+          ],
+          "name": "thirdTrack",
+          "type": "Track",
+        }
+      }
+      playing="STOPPED"
+    />
+  </div>
+</div>
+`;

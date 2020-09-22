@@ -1,0 +1,38 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`test BodyHome component should render Error component if we have error status 1`] = `
+<Error
+  error="error"
+/>
+`;
+
+exports[`test BodyHome component should render Loader component if we have pending status 1`] = `
+<Fragment>
+  <Memo(Header) />
+  <div
+    className="loader"
+  >
+    <WithStyles(ForwardRef(CircularProgress))
+      color="inherit"
+    />
+  </div>
+</Fragment>
+`;
+
+exports[`test BodyHome component should render Playlists and PlaylistsTrack components if we have success status 1`] = `
+<Fragment>
+  <Memo(Header) />
+  <Memo(Playlists)
+    playlists="PlaylistsType"
+    title="Top Artists"
+  />
+  <Memo(Playlists)
+    playlists="albums"
+    title="New Releases"
+  />
+  <PlaylistsTrack
+    playlists="PlaylistsTrackType"
+    title="Top Tracks"
+  />
+</Fragment>
+`;

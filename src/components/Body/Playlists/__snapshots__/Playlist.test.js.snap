@@ -1,0 +1,49 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`tests Playlists component should render Playlists with props 1`] = `
+<div
+  className="playlist"
+>
+  <h1>
+    test
+  </h1>
+  <div
+    className="grid"
+  >
+    <Link
+      key="0"
+      to="/playlists/1/Track"
+    >
+      <div
+        className="grid__item playlist__item"
+      >
+        <img
+          alt="firstTrack"
+          src="firstTrackUrl"
+        />
+        <p>
+          firstTrack
+        </p>
+      </div>
+    </Link>
+    <Link
+      key="1"
+      to="/playlists/1/Track"
+    >
+      <div
+        className="grid__item playlist__item"
+      >
+        <img
+          alt="secondTrack"
+          src="secondTrack"
+        />
+        <p>
+          secondTrack
+        </p>
+      </div>
+    </Link>
+  </div>
+</div>
+`;
+
+exports[`tests Playlists component should render Playlists without props 1`] = `""`;

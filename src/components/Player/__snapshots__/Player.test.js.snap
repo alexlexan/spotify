@@ -1,0 +1,19 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`tests Player component render Player component 1`] = `
+<div
+  className="player"
+>
+  <div
+    className="player__body"
+  >
+    <Sidebar />
+    <ErrorBoundary
+      FallbackComponent={[Function]}
+    >
+      <Body />
+    </ErrorBoundary>
+  </div>
+  <Footer />
+</div>
+`;

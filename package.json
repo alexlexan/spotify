@@ -8,6 +8,7 @@
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.5.0",
     "@testing-library/user-event": "^7.2.1",
+    "@types/enzyme": "^3.10.6",
     "@types/jest": "^26.0.9",
     "@types/material-ui": "^0.21.8",
     "@types/node": "^14.0.27",
@@ -37,6 +38,11 @@
     "use-sound": "^1.0.2"
   },
   "jest": {
+    "collectCoverageFrom": [
+      "src/**/**/*.{js,jsx,ts,tsx}",
+      "!<rootDir>/node_modules/",
+      "!<rootDir>/path/to/dir/"
+    ],
     "snapshotSerializers": [
       "enzyme-to-json/serializer"
     ]
@@ -45,10 +51,15 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "test:coverage": "jest --coverage"
   },
   "eslintConfig": {
-    "extends": "react-app"
+    "extends": "react-app",
+    "globals": {
+      "shallow": "readonly",
+      "mount": "readonly"
+    }
   },
   "browserslist": {
     "production": [
@@ -61,5 +72,9 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "jest-react-hooks-shallow": "^1.4.1",
+    "redux-mock-store": "^1.5.4"
   }
 }

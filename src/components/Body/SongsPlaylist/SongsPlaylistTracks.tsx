@@ -1,4 +1,4 @@
-import React, { memo, useEffect } from "react";
+import React, { memo } from "react";
 import SongRow from "../../SongRow/SongRow";
 import PlayCircleFilledIcon from "@material-ui/icons/PlayCircleFilled";
 import FavoriteIcon from "@material-ui/icons/Favorite";
@@ -36,7 +36,7 @@ const SongsPlaylistTracks = () => {
     let songsArray = value[1];
     songs = songsArray?.items.map((item) => item.track);
   }
-  useEffect(() => {
+  React.useEffect(() => {
     playlist && dispatch(setActivePlaylist(playlist));
     songs && dispatch(setSongs(songs));
   }, [songs, playlist, dispatch]);
@@ -74,7 +74,7 @@ const SongsPlaylistTracks = () => {
   );
 };
 
-const SongRows = memo(({ songs }: { songs: Track[] }) => {
+export const SongRows = memo(({ songs }: { songs: Track[] }) => {
   return (
     <>
       {songs?.map((item, index) => (

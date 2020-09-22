@@ -1,0 +1,110 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`test Header component render Header with user 1`] = `
+<div
+  className="header"
+>
+  <div
+    className="header__left"
+  >
+    <ArrowBackIosIcon
+      className="header__arrowLeft"
+      onClick={[Function]}
+    />
+    <ArrowForwardIosIcon
+      className="header__arrowRight"
+      onClick={[Function]}
+    />
+  </div>
+  <div
+    className="header__right"
+  >
+    <WithStyles(ForwardRef(Avatar))
+      alt="user"
+      src="imagesUrl"
+    />
+    <h4>
+      user
+    </h4>
+  </div>
+</div>
+`;
+
+exports[`test Header component render Header without user 1`] = `
+<div
+  className="header"
+>
+  <div
+    className="header__left"
+  >
+    <ArrowBackIosIcon
+      className="header__arrowLeft"
+      onClick={[Function]}
+    />
+    <ArrowForwardIosIcon
+      className="header__arrowRight"
+      onClick={[Function]}
+    />
+  </div>
+</div>
+`;
+
+exports[`test Header component should be call mockGoBack and mockGoForward 1`] = `
+<div
+  className="header"
+>
+  <div
+    className="header__left"
+  >
+    <ArrowBackIosIcon
+      className="header__arrowLeft"
+      onClick={[Function]}
+    />
+    <ArrowForwardIosIcon
+      className="header__arrowRight"
+      onClick={[Function]}
+    />
+  </div>
+  <div
+    className="header__right"
+  >
+    <WithStyles(ForwardRef(Avatar))
+      alt="user"
+      src="imagesUrl"
+    />
+    <h4>
+      user
+    </h4>
+  </div>
+</div>
+`;
+
+exports[`test Header component should dont call mockGoBack 1`] = `
+<div
+  className="header"
+>
+  <div
+    className="header__left"
+  >
+    <ArrowBackIosIcon
+      className="header__arrowLeft"
+      onClick={[Function]}
+    />
+    <ArrowForwardIosIcon
+      className="header__arrowRight"
+      onClick={[Function]}
+    />
+  </div>
+  <div
+    className="header__right"
+  >
+    <WithStyles(ForwardRef(Avatar))
+      alt="user"
+      src="imagesUrl"
+    />
+    <h4>
+      user
+    </h4>
+  </div>
+</div>
+`;

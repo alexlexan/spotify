@@ -1,0 +1,210 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`test SongRows component should render SongRows component with props 1`] = `
+<Fragment>
+  <Memo(SongRow)
+    image="urlImage"
+    key="0"
+    track={
+      Object {
+        "name": "firstTrack",
+      }
+    }
+  />
+</Fragment>
+`;
+
+exports[`test SongsPlaylistAlbum component should render Error component if status error 1`] = `
+<Error
+  error="error"
+/>
+`;
+
+exports[`test SongsPlaylistAlbum component should render Loader component if status pending 1`] = `
+<Fragment>
+  <Loader />
+</Fragment>
+`;
+
+exports[`test SongsPlaylistAlbum component should render SongsPlaylistAlbum component 1`] = `
+<Memo(SongsPlaylistAlbum)>
+  <div
+    className="body__info"
+  >
+    <img
+      alt="playlist"
+      src="secondTrackUrl"
+    />
+    <div
+      className="body__infoText"
+    >
+      <strong>
+        PLAYLIST
+      </strong>
+      <h2>
+        playlist
+      </h2>
+      <p>
+        10
+         songs
+      </p>
+    </div>
+  </div>
+  <div
+    className="body__songs"
+  >
+    <div
+      className="body__icons"
+    >
+      <ForwardRef
+        className="body__shuffle"
+        onClick={[Function]}
+      >
+        <WithStyles(ForwardRef(SvgIcon))
+          className="body__shuffle"
+          onClick={[Function]}
+        >
+          <ForwardRef(SvgIcon)
+            className="body__shuffle"
+            classes={
+              Object {
+                "colorAction": "MuiSvgIcon-colorAction",
+                "colorDisabled": "MuiSvgIcon-colorDisabled",
+                "colorError": "MuiSvgIcon-colorError",
+                "colorPrimary": "MuiSvgIcon-colorPrimary",
+                "colorSecondary": "MuiSvgIcon-colorSecondary",
+                "fontSizeInherit": "MuiSvgIcon-fontSizeInherit",
+                "fontSizeLarge": "MuiSvgIcon-fontSizeLarge",
+                "fontSizeSmall": "MuiSvgIcon-fontSizeSmall",
+                "root": "MuiSvgIcon-root",
+              }
+            }
+            onClick={[Function]}
+          >
+            <svg
+              aria-hidden={true}
+              className="MuiSvgIcon-root body__shuffle"
+              focusable="false"
+              onClick={[Function]}
+              viewBox="0 0 24 24"
+            >
+              <path
+                d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 14.5v-9l6 4.5-6 4.5z"
+              />
+            </svg>
+          </ForwardRef(SvgIcon)>
+        </WithStyles(ForwardRef(SvgIcon))>
+      </ForwardRef>
+      <ForwardRef
+        fontSize="large"
+      >
+        <WithStyles(ForwardRef(SvgIcon))
+          fontSize="large"
+        >
+          <ForwardRef(SvgIcon)
+            classes={
+              Object {
+                "colorAction": "MuiSvgIcon-colorAction",
+                "colorDisabled": "MuiSvgIcon-colorDisabled",
+                "colorError": "MuiSvgIcon-colorError",
+                "colorPrimary": "MuiSvgIcon-colorPrimary",
+                "colorSecondary": "MuiSvgIcon-colorSecondary",
+                "fontSizeInherit": "MuiSvgIcon-fontSizeInherit",
+                "fontSizeLarge": "MuiSvgIcon-fontSizeLarge",
+                "fontSizeSmall": "MuiSvgIcon-fontSizeSmall",
+                "root": "MuiSvgIcon-root",
+              }
+            }
+            fontSize="large"
+          >
+            <svg
+              aria-hidden={true}
+              className="MuiSvgIcon-root MuiSvgIcon-fontSizeLarge"
+              focusable="false"
+              viewBox="0 0 24 24"
+            >
+              <path
+                d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"
+              />
+            </svg>
+          </ForwardRef(SvgIcon)>
+        </WithStyles(ForwardRef(SvgIcon))>
+      </ForwardRef>
+      <ForwardRef>
+        <WithStyles(ForwardRef(SvgIcon))>
+          <ForwardRef(SvgIcon)
+            classes={
+              Object {
+                "colorAction": "MuiSvgIcon-colorAction",
+                "colorDisabled": "MuiSvgIcon-colorDisabled",
+                "colorError": "MuiSvgIcon-colorError",
+                "colorPrimary": "MuiSvgIcon-colorPrimary",
+                "colorSecondary": "MuiSvgIcon-colorSecondary",
+                "fontSizeInherit": "MuiSvgIcon-fontSizeInherit",
+                "fontSizeLarge": "MuiSvgIcon-fontSizeLarge",
+                "fontSizeSmall": "MuiSvgIcon-fontSizeSmall",
+                "root": "MuiSvgIcon-root",
+              }
+            }
+          >
+            <svg
+              aria-hidden={true}
+              className="MuiSvgIcon-root"
+              focusable="false"
+              viewBox="0 0 24 24"
+            >
+              <path
+                d="M6 10c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm12 0c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm-6 0c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z"
+              />
+            </svg>
+          </ForwardRef(SvgIcon)>
+        </WithStyles(ForwardRef(SvgIcon))>
+      </ForwardRef>
+    </div>
+    <Memo()
+      image="secondTrackUrl"
+      songs={
+        Object {
+          "items": Array [
+            Object {
+              "name": "firstTrack",
+            },
+          ],
+        }
+      }
+    >
+      <Memo(SongRow)
+        image="secondTrackUrl"
+        key="0"
+        track={
+          Object {
+            "name": "firstTrack",
+          }
+        }
+      >
+        <div
+          className="songRow"
+          onClick={[Function]}
+        >
+          <img
+            alt=""
+            className="songRow__album"
+            src="secondTrackUrl"
+          />
+          <div
+            className="songRow__info"
+          >
+            <h1>
+              firstTrack
+            </h1>
+            <p>
+               -
+               
+            </p>
+          </div>
+        </div>
+      </Memo(SongRow)>
+    </Memo()>
+  </div>
+</Memo(SongsPlaylistAlbum)>
+`;

@@ -2,18 +2,10 @@ import React from "react";
 import "../Header/Header.sass";
 import { Avatar } from "@material-ui/core";
 import { useSelector } from "react-redux";
-import { RouteComponentProps, useHistory } from "react-router-dom";
+import { useHistory } from "react-router-dom";
 import ArrowBackIosIcon from "@material-ui/icons/ArrowBackIos";
 import ArrowForwardIosIcon from "@material-ui/icons/ArrowForwardIos";
 import { AppState } from "../../store/rootReducer";
-
-type aa = RouteComponentProps;
-
-type HistoryState = {
-  location: {
-    key: string;
-  };
-};
 
 const Header = () => {
   const user = useSelector((state: AppState) => state.spotify.user);

@@ -1,4 +1,4 @@
-import React, { memo, useEffect } from "react";
+import React, { memo } from "react";
 import SongRow from "../../SongRow/SongRow";
 import PlayCircleFilledIcon from "@material-ui/icons/PlayCircleFilled";
 import FavoriteIcon from "@material-ui/icons/Favorite";
@@ -41,7 +41,7 @@ const SongsPlaylistAlbum: React.FC = () => {
     [playlist, songs] = value;
   }
 
-  useEffect(() => {
+  React.useEffect(() => {
     playlist && dispatch(setActivePlaylist(playlist));
     songs && dispatch(setSongs(songs.items));
   }, [songs, playlist, dispatch]);
@@ -92,7 +92,7 @@ type PropsSongs = {
   image: string;
 };
 
-const SongRows: React.FC<PropsSongs> = memo(({ songs, image }) => {
+export const SongRows: React.FC<PropsSongs> = memo(({ songs, image }) => {
   return (
     <>
       {songs.items?.map((item, index) => (

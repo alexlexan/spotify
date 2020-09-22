@@ -82,7 +82,7 @@ export const playAndSetTrack = (track: Track) => {
   };
 };
 
-const actions = {
+export const actions = {
   setSongs,
   pause,
   stop,
