@@ -1,10 +1,9 @@
-import Sound from "react-sound";
 import { Actions } from "./actions";
 
 export const initialState: State = {
   user: null,
   myPlaylists: null,
-  playing: Sound.status.PAUSED,
+  playing: "PAUSED",
   activeTrack: null,
   volume: 50,
   songs: null,
@@ -28,17 +27,17 @@ const spotifyReducer = (
     case "PLAY":
       return {
         ...state,
-        playing: Sound.status.PLAYING,
+        playing: "PLAYING",
       };
     case "STOP":
       return {
         ...state,
-        playing: Sound.status.STOPPED,
+        playing: "STOPPED",
       };
     case "PAUSE":
       return {
         ...state,
-        playing: Sound.status.PAUSED,
+        playing: "PAUSED",
       };
 
     case "VOLUME":

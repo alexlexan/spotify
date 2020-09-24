@@ -5,7 +5,6 @@ import SkipPreviousIcon from "@material-ui/icons/SkipPrevious";
 import SkipNextIcon from "@material-ui/icons/SkipNext";
 import PauseCircleOutlineIcon from "@material-ui/icons/PauseCircleOutline";
 import { useDispatch, useSelector } from "react-redux";
-import Sound from "react-sound";
 import { play, pause, playAndSetTrack } from "../../store/actions";
 import { AppState } from "../../store/rootReducer";
 import { Track } from "../../store/reducer";
@@ -71,7 +70,7 @@ const Footer: React.FC = () => {
           className="footer__icon"
           onClick={() => prevTrack(songs)}
         />
-        {playing === (Sound as any).status.PLAYING ? (
+        {playing === "PLAYING" ? (
           <PauseCircleOutlineIcon
             onClick={pauseTrack}
             fontSize="large"
