@@ -12,10 +12,10 @@ import {
   PlaylistsTrackType,
   PlaylistsType,
   PlaylistsNewReleasesType,
-} from "../../store/reducer";
+} from "../../store/ducks/type";
 
 const BodyHome = () => {
-  const token = useSelector((state: AppState) => state.spotify.token);
+  const token = useSelector((state: AppState) => state.auth.token);
   const { status, value, error } = useAsync<
     [PlaylistsType, PlaylistsTrackType, PlaylistsNewReleasesType],
     Error,

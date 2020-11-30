@@ -1,8 +1,10 @@
 import { combineReducers } from "redux";
-import spotifyReducer from "./reducer";
+import authReducer from "./ducks/auth";
+import playerReducer from "./ducks/player";
 
 export const rootReducer = combineReducers({
-  spotify: spotifyReducer,
+  auth: authReducer,
+  player: playerReducer
 });
 
 export type AppState = ReturnType<typeof rootReducer>;

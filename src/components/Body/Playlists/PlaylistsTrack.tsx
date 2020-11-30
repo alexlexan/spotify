@@ -1,8 +1,8 @@
 import React from "react";
 import "./Playlist.sass";
 import { useDispatch } from "react-redux";
-import { playAndSetTrack, setSongs } from "../../../store/actions";
-import { PlaylistsTrackType, Track } from "../../../store/reducer";
+import { playAndSetTrack, setSongs } from "../../../store/ducks/player";
+import { PlaylistsTrackType, Track } from "../../../store/ducks/type";;
 
 type Props = {
   playlists: PlaylistsTrackType | null;

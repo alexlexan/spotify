@@ -8,7 +8,7 @@ import ArrowForwardIosIcon from "@material-ui/icons/ArrowForwardIos";
 import { AppState } from "../../store/rootReducer";
 
 const Header = () => {
-  const user = useSelector((state: AppState) => state.spotify.user);
+  const user = useSelector((state: AppState) => state.auth.user);
   const history = useHistory();
 
   const Back = () => {

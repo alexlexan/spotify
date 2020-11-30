@@ -4,11 +4,12 @@ import Login from "./components/Login/Login";
 import { getTokenFromResponse } from "./components/spotify";
 import s from "./spotifyApp";
 import Player from "./components/Player/Player";
-import { setToken, setUser, setPlaylists } from "./store/actions";
+import { setToken, setUser } from "./store/ducks/auth";
+import {setPlaylists } from "./store/ducks/player";
 import { AppState } from "./store/rootReducer";
 
 const App = () => {
-  const token = useSelector((state: AppState) => state.spotify.token);
+  const token = useSelector((state: AppState) => state.auth.token);
   const dispatch = useDispatch();
 
   React.useEffect(() => {

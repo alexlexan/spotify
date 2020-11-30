@@ -14,13 +14,13 @@ import useDebounce from "../../useHooks/useDebounce";
 import { search } from "../../useHooks/useSearch";
 import PlaylistsTrack from "../Body/Playlists/PlaylistsTrack";
 import { AppState } from "../../store/rootReducer";
-import { PlaylistsType } from "../../store/reducer";
+import { PlaylistsType } from "../../store/ducks/type";
 import { Status } from "../../useHooks/useAsync";
 
 const Search: React.FC = () => {
   const history = useHistory();
-  const user = useSelector((state: AppState) => state.spotify.user);
-  const token = useSelector((state: AppState) => state.spotify.token);
+  const user = useSelector((state: AppState) => state.auth.user);
+  const token = useSelector((state: AppState) => state.auth.token);
 
   const [searchTerm, setSearchTerm] = useState("");
   const debouncedSearchTerm = useDebounce(searchTerm, 1000);

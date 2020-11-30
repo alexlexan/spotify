@@ -9,7 +9,7 @@ import {
   playAndSetTrack,
   setSongs,
   setActivePlaylist,
-} from "../../../store/actions";
+} from "../../../store/ducks/player";
 import Loader from "../../Loader";
 import useFetch from "../../../useHooks/useFetch";
 import { getPlaylists } from "../../../useHooks/useFetch";
@@ -17,13 +17,13 @@ import Error from "../../Error";
 import { playlistUrl } from "../../spotify";
 import { useParams } from "react-router-dom";
 import { AppState } from "../../../store/rootReducer";
-import { Songs, ActivePlaylist, SongsAlbum } from "../../../store/reducer";
+import { Songs, ActivePlaylist, SongsAlbum } from "../../../store/ducks/type";
 
 const SongsPlaylistAlbum: React.FC = () => {
   let playlist: ActivePlaylist | null = null;
   let songs: SongsAlbum | null = null;
 
-  const token = useSelector((state: AppState) => state.spotify.token);
+  const token = useSelector((state: AppState) => state.auth.token);
   const { type, id } = useParams<{ type: string; id: string }>();
   const dispatch = useDispatch();
 

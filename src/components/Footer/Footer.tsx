@@ -5,20 +5,20 @@ import SkipPreviousIcon from "@material-ui/icons/SkipPrevious";
 import SkipNextIcon from "@material-ui/icons/SkipNext";
 import PauseCircleOutlineIcon from "@material-ui/icons/PauseCircleOutline";
 import { useDispatch, useSelector } from "react-redux";
-import { play, pause, playAndSetTrack } from "../../store/actions";
+import { play, pause, playAndSetTrack } from "../../store/ducks/player";
 import { AppState } from "../../store/rootReducer";
-import { Track } from "../../store/reducer";
+import { Track } from "../../store/ducks/type";
 import VolumeSlider from "./VolumeSlider";
 
 const Footer: React.FC = () => {
-  const playing = useSelector((state: AppState) => state.spotify.playing);
+  const playing = useSelector((state: AppState) => state.player.playing);
   const playlists = useSelector(
-    (state: AppState) => state.spotify.activePlaylist
+    (state: AppState) => state.player.activePlaylist
   );
   const activeTrack = useSelector(
-    (state: AppState) => state.spotify.activeTrack
+    (state: AppState) => state.player.activeTrack
   );
-  const songs = useSelector((state: AppState) => state.spotify.songs);
+  const songs = useSelector((state: AppState) => state.player.songs);
   const dispatch = useDispatch();
 
   const nextTrack = (songs: Track[] | null) => {

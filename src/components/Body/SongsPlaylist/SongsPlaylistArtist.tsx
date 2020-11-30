@@ -9,14 +9,14 @@ import {
   playAndSetTrack,
   setSongs,
   setActivePlaylist,
-} from "../../../store/actions";
+} from "../../../store/ducks/player";
 import useFetch from "../../../useHooks/useFetch";
 import { getPlaylists } from "../../../useHooks/useFetch";
 import Loader from "../../Loader";
 import Error from "../../Error";
 import { useParams } from "react-router-dom";
 import { playlistUrl } from "../../spotify";
-import { ActivePlaylist, SongsArtist } from "../../../store/reducer";
+import { ActivePlaylist, SongsArtist } from "../../../store/ducks/type";
 import { AppState } from "../../../store/rootReducer";
 
 const SongsPlaylistArtist = () => {
@@ -24,7 +24,7 @@ const SongsPlaylistArtist = () => {
   let songs: SongsArtist | null = null;
   const { type, id } = useParams<{ type: string; id: string }>();
   const dispatch = useDispatch();
-  const token = useSelector((state: AppState) => state.spotify.token);
+  const token = useSelector((state: AppState) => state.auth.token);
 
   const urlPlaylist = `${playlistUrl}/${type}s/${id}`;
   const urlSongs = `${playlistUrl}/${type}s/${id}/top-tracks?country=RU`;

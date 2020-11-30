@@ -1,8 +1,8 @@
 import React from "react";
 import "./SongRow.sass";
 import { useDispatch } from "react-redux";
-import { playAndSetTrack } from "../../store/actions";
-import { Track } from "../../store/reducer";
+import { playAndSetTrack } from "../../store/ducks/player";
+import { Track } from "../../store/ducks/type";
 
 export type SongRowProps = {
   track: Track;

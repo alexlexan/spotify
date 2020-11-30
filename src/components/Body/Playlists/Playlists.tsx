@@ -1,7 +1,7 @@
 import React from "react";
 import "./Playlist.sass";
 import { Link } from "react-router-dom";
-import { PlaylistsType } from "../../../store/reducer";
+import { PlaylistsType } from "../../../store/ducks/type";
 
 type Props = {
   playlists: PlaylistsType | null;

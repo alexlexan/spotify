@@ -3,10 +3,10 @@ import Header from "../Header/Header";
 import Playlists from "./Playlists/Playlists";
 import { useSelector } from "react-redux";
 import { AppState } from "../../store/rootReducer";
-import { PlaylistsType } from "../../store/reducer";
+import { PlaylistsType } from "../../store/ducks/type";
 
 const BodyPlaylists: React.FC = () => {
-  const playlists = useSelector((state: AppState) => state.spotify.myPlaylists);
+  const playlists = useSelector((state: AppState) => state.player.myPlaylists);
 
   return (
     <>

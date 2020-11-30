@@ -4,10 +4,11 @@ import VolumeDownIcon from "@material-ui/icons/VolumeDown";
 import { Grid, Slider } from "@material-ui/core";
 import { useSelector, useDispatch } from "react-redux";
 import Sound from "react-sound";
-import { stop } from "../../store/actions";
+import { stop, setVolume } from "../../store/ducks/player";
 import { AppState } from "../../store/rootReducer";
-import { State, Track } from "../../store/reducer";
-import { Actions } from "../../store/actions";
+import { Track } from "../../store/ducks/type";
+import { playerState} from "../../store/ducks/player";
+import { playerActions } from "../../store/ducks/player";
 import { ThunkDispatch } from "redux-thunk";
 
 type VolumeSliderProps = {
@@ -19,8 +20,8 @@ const VolumeSlider: React.FC<VolumeSliderProps> = ({
   activeTrack,
   playing,
 }) => {
-  const dispatch: ThunkDispatch<State, unknown, Actions> = useDispatch();
-  const volume = useSelector((state: AppState) => state.spotify.volume);
+  const dispatch: ThunkDispatch<playerState, unknown, playerActions> = useDispatch();
+  const volume = useSelector((state: AppState) => state.player.volume);
   const oldVolume = React.useRef(volume);
 
   const finish = () => {
@@ -31,13 +32,13 @@ const VolumeSlider: React.FC<VolumeSliderProps> = ({
     _: ChangeEvent<{}>,
     newValue: number | number[]
   ) => {
-    dispatch({ type: "VOLUME", volume: newValue as number });
+    dispatch(setVolume(newValue as number));
     oldVolume.current = newValue as number;
   };
 
   const muteVolume = (volume: number, oldVolume: number | number[]) => {
     const newVolume = volume === 0 ? oldVolume : 0;
-    dispatch({ type: "VOLUME", volume: newVolume as number });
+    dispatch(setVolume(newVolume as number));
   };
 
   return (
